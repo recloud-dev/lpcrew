@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP CREW — Глубина · Команда пловцов, Ханты-Мансийск</title>
+  <meta name="description" content="LP Crew — душевная команда пловцов-любителей из Ханты-Мансийска. Бассейн, открытая вода и соревнования. С 2019 года.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dive intro -->
+  <div class="dive-intro" id="diveIntro" aria-hidden="true">
+    <div class="di-inner">
+      <div class="di-mark">LP CREW</div>
+      <div class="di-sub">Глубина · Depth</div>
+    </div>
+    <button class="di-skip" id="diveSkip">Пропустить погружение ↓</button>
+  </div>
+
+  <!-- Header -->
+  <header class="hd" id="top">
+    <a href="index.html" class="brand">LP<span>/</span>CREW</a>
+    <nav class="nav">
+      <a href="#about">Команда</a>
+      <a href="#services">Тренировки</a>
+      <a href="#team">Тренеры</a>
+      <a href="#gallery">Заплывы</a>
+      <a href="news.html">Новости</a>
+      <a href="#join">Контакты</a>
+    </nav>
+    <a href="#join" class="btn btn-accent">Записаться</a>
+  </header>
+
+  <!-- Depth gauge -->
+  <aside class="gauge" aria-hidden="true">
+    <span class="g-cap">Глубина</span>
+    <div class="g-track"><div class="g-fill" id="gFill"></div></div>
+    <span class="g-read" id="gRead">0м</span>
+  </aside>
+
+  <!-- Dot nav -->
+  <nav class="dotnav" id="dotNav" aria-label="Навигация по разделам"></nav>
+
+  <!-- Dive scroll container -->
+  <main class="dive" id="dive">
+
+    <!-- HERO -->
+    <section class="snap s-hero" id="hero" data-depth="0" data-name="Поверхность">
+      <div class="hero-bg" data-parallax="0.3"></div>
+      <div class="bubbles" data-bubbles="14"></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <p class="eyebrow reveal"><span class="dot"></span>Ханты-Мансийск · с 2019</p>
+          <h1 class="reveal d1">Душевная команда<span class="accent">пловцов-любителей.</span></h1>
+          <p class="lead reveal d2">Бассейн, открытая вода и соревнования. Погружайтесь вместе с нами — от поверхности до самой глубины.</p>
+          <div class="hero-cta reveal d3">
+            <a href="#join" class="btn btn-accent">Записаться на тренировку</a>
+            <a href="#stats" class="btn btn-line">Результаты команды</a>
+          </div>
+          <div class="hero-meta reveal d4">
+            <span><b>317</b> научили плавать</span>
+            <span><b>380,4 км</b> на открытой воде</span>
+            <span><b>22</b> водоёма</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="mouse"></span><span>Скролл = глубже</span>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="snap s-stats" id="stats" data-depth="40" data-name="Результаты">
+      <div class="bubbles" data-bubbles="10"></div>
+      <div class="wrap">
+        <p class="kicker reveal">Результаты команды</p>
+        <div class="stats-grid">
+          <div class="stat reveal d1"><div class="num" data-target="317">0</div><div class="lbl">человек научили плавать</div></div>
+          <div class="stat reveal d2"><div class="num" data-target="54">0</div><div class="lbl">участвуют в соревнованиях</div></div>
+          <div class="stat reveal d3"><div class="num" data-target="380.4" data-decimals="1">0</div><div class="lbl">км на открытой воде</div></div>
+          <div class="stat reveal d4"><div class="num" data-target="22">0</div><div class="lbl">покорённых рек, озёр и морей</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="snap s-about" id="about" data-depth="90" data-name="О команде">
+      <div class="bubbles" data-bubbles="9"></div>
+      <div class="wrap">
+        <div class="about-grid">
+          <div>
+            <p class="kicker reveal">Мы из Югры</p>
+            <h2 class="reveal d1">Люди разных возрастов, объединённые любовью к плаванию</h2>
+            <p class="reveal d2">Команда основана в 2019. Мы из Югры — люди разных возрастов и профессий, которых объединяет одно: вода. Кто-то пришёл, не умея держаться на поверхности, кто-то готовится к марафонским заплывам. Здесь рады каждому.</p>
+            <div class="about-tags reveal d3">
+              <span class="tag">Бассейн</span><span class="tag">Открытая вода</span>
+              <span class="tag">Соревнования</span><span class="tag">Сообщество</span>
+            </div>
+          </div>
+          <div class="about-img reveal d2"><img src="../img/p08.jpg" alt="Команда LP Crew на тренировке"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="snap s-services" id="services" data-depth="140" data-name="Тренировки">
+      <div class="bubbles" data-bubbles="8"></div>
+      <div class="wrap">
+        <div class="head">
+          <p class="kicker reveal">Что мы предлагаем</p>
+          <h2 class="reveal d1">Тренировки на любой глубине</h2>
+        </div>
+        <div class="svc-grid">
+          <div class="svc reveal d1"><div class="ic">🏊</div><h3>Тренировки</h3><p>Бассейн зимой, открытая вода летом. Группы по уровню подготовки.</p></div>
+          <div class="svc reveal d2"><div class="ic">🆓</div><h3>Бесплатные тренировки</h3><p>Приходите попробовать — первое занятие, чтобы почувствовать воду и команду.</p></div>
+          <div class="svc reveal d3"><div class="ic">💻</div><h3>Online-планы</h3><p>Индивидуальный план и сопровождение тренера, где бы вы ни были.</p></div>
+          <div class="svc reveal d4"><div class="ic">🎥</div><h3>Видеоразбор техники</h3><p>Съёмка под водой и детальный разбор гребка — техника, которую видно.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="snap s-team" id="team" data-depth="200" data-name="Тренеры">
+      <div class="bubbles" data-bubbles="8"></div>
+      <div class="wrap">
+        <p class="kicker reveal">Кто ведёт</p>
+        <h2 class="reveal d1">Тренеры LP Crew</h2>
+        <div class="team-grid">
+          <div class="coach reveal d1"><img src="../img/p07.jpg" alt="Камилия — тренер LP Crew"><div class="cap"><span>Тренер</span><h3>Камилия</h3></div></div>
+          <div class="coach reveal d2"><img src="../img/p01.jpg" alt="Лера — тренер LP Crew"><div class="cap"><span>Тренер</span><h3>Лера</h3></div></div>
+          <div class="coach reveal d3"><img src="../img/p08.jpg" alt="Лилия — тренер LP Crew"><div class="cap"><span>Тренер</span><h3>Лилия</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="snap s-gallery" id="gallery" data-depth="250" data-name="Заплывы">
+      <div class="bubbles" data-bubbles="7"></div>
+      <div class="wrap">
+        <p class="kicker reveal">22 водоёма — от Оби до океана</p>
+        <h2 class="reveal d1">Заплывы команды</h2>
+        <div class="gal-grid">
+          <div class="gal-item big reveal d1"><img src="../img/p06.jpg" alt="Открытая вода X-Waters Ugra"><div class="glab">X-Waters Ugra · Иртыш</div></div>
+          <div class="gal-item reveal d2"><img src="../img/p03.jpg" alt="Заплыв на открытой воде"><div class="glab">Открытая вода</div></div>
+          <div class="gal-item reveal d2"><img src="../img/p04.jpg" alt="Команда на старте заплыва"><div class="glab">Старт заплыва</div></div>
+          <div class="gal-item wide reveal d3"><img src="../img/p02.jpg" alt="X-Waters Thailand"><div class="glab">X-Waters Thailand</div></div>
+          <div class="gal-item reveal d3"><img src="../img/p09.jpg" alt="Тренировка в бассейне"><div class="glab">Бассейн Аквапарка</div></div>
+          <div class="gal-item reveal d4"><img src="../img/p10.jpg" alt="Финиш заплыва на открытой воде"><div class="glab">Финиш</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="snap s-reviews" id="reviews" data-depth="300" data-name="Отзывы">
+      <div class="bubbles" data-bubbles="6"></div>
+      <div class="wrap">
+        <p class="kicker reveal">Что говорят</p>
+        <h2 class="reveal d1">Отзывы команды</h2>
+        <div class="rev-grid">
+          <div class="rev reveal d1"><p>Пришла, не умея держаться на воде. Через полгода — первый открытый заплыв.</p><span class="who">— Участница LP Crew</span></div>
+          <div class="rev reveal d2"><p>Душевная атмосфера и грамотная техника. Видеоразбор изменил мой гребок.</p><span class="who">— Пловец команды</span></div>
+          <div class="rev reveal d3"><p>Online-тренировки удобны даже в командировках.</p><span class="who">— Участник online-плана</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="snap s-news" id="news" data-depth="340" data-name="Новости">
+      <div class="bubbles" data-bubbles="6"></div>
+      <div class="wrap">
+        <p class="kicker reveal">Журнал</p>
+        <h2 class="reveal d1">Новости команды</h2>
+        <div class="news-grid">
+          <a class="post reveal d1" href="news.html">
+            <img src="../img/marathon-2.jpg" alt="СберПрайм Зелёный марафон">
+            <div class="post-b"><time>Соревнования</time><h3>СберПрайм Зелёный марафон</h3><p>Команда вышла на старт и пробежала все дистанции — от 400 м до полумарафона.</p><span class="more">Читать →</span></div>
+          </a>
+          <a class="post reveal d2" href="news.html">
+            <img src="../img/p06.jpg" alt="Итоги сезона X-Waters Ugra">
+            <div class="post-b"><time>Соревнования</time><h3>Открытая вода: X-Waters Ugra</h3><p>Главный домашний старт сезона — заплыв по Иртышу в Ханты-Мансийске.</p><span class="more">Читать →</span></div>
+          </a>
+          <a class="post reveal d3" href="news.html">
+            <img src="../img/p02.jpg" alt="X-Waters Thailand">
+            <div class="post-b"><time>Поездки</time><h3>X-Waters Thailand</h3><p>Команда LP Crew испытала себя в тёплых водах на международном заплыве.</p><span class="more">Читать →</span></div>
+          </a>
+        </div>
+        <div class="news-more reveal d4"><a href="news.html" class="btn btn-line">Все новости →</a></div>
+      </div>
+    </section>
+
+    <!-- JOIN + FOOTER -->
+    <section class="snap s-join" id="join" data-depth="380" data-name="Контакты">
+      <div class="bubbles" data-bubbles="8"></div>
+      <div class="wrap">
+        <div class="join-grid">
+          <div>
+            <p class="kicker reveal">Самая глубина — присоединяйтесь</p>
+            <h2 class="reveal d1">Записаться на тренировку</h2>
+            <p class="lead reveal d2">Оставьте заявку — расскажем про ближайшую бесплатную тренировку и подберём группу по уровню.</p>
+            <div class="contacts reveal d3">
+              <a href="https://t.me/" target="_blank" rel="noopener">Telegram <span class="cl">@lpcrew</span></a>
+              <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp <span class="cl">написать</span></a>
+              <a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте <span class="cl">сообщество</span></a>
+            </div>
+          </div>
+          <form class="join-form reveal d2" id="joinForm" novalidate>
+            <label for="jn-name">Имя</label>
+            <input id="jn-name" name="name" type="text" placeholder="Как вас зовут" autocomplete="name" required>
+            <label for="jn-phone">Телефон</label>
+            <input id="jn-phone" name="phone" type="tel" placeholder="+7 ___ ___ __ __" autocomplete="tel" required>
+            <label for="jn-msg">Удобный мессенджер</label>
+            <select id="jn-msg" name="messenger">
+              <option value="telegram">Telegram</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="vk">ВКонтакте</option>
+              <option value="phone">Звонок</option>
+            </select>
+            <button type="submit" class="btn btn-accent">Отправить заявку</button>
+            <p class="note" id="formNote">Это демо-форма. Отправка ничего не делает.</p>
+          </form>
+        </div>
+
+        <footer class="ft reveal">
+          <div class="ft-grid">
+            <div>
+              <a href="index.html" class="brand">LP<span>/</span>CREW</a>
+              <p>Душевная команда пловцов из Ханты-Мансийска. С 2019 года.</p>
+            </div>
+            <div>
+              <h4>Контакты</h4>
+              <p>Бассейн Аквапарка, ЮграМегаСпорт<br>Ледовая ул. 1, Ханты-Мансийск</p>
+              <p><a href="mailto:dolphin-90@yandex.ru">dolphin-90@yandex.ru</a></p>
+            </div>
+            <div>
+              <h4>Соцсети</h4>
+              <p><a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a><br>
+              <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></p>
+            </div>
+          </div>
+          <p class="copy">© 2019–2026 LP CREW. Фото использованы для демонстрации.</p>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/depth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

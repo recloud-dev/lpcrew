@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости команды — LP Crew</title>
+  <meta name="description" content="Новости команды пловцов LP Crew: соревнования, открытая вода, тренировки в бассейне, поездки и заплывы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">LP&nbsp;Crew</a>
+      <nav class="nav" aria-label="Главное меню">
+        <a href="index.html#about">О команде</a>
+        <a href="index.html#services">Тренировки</a>
+        <a href="index.html#coaches">Тренеры</a>
+        <a href="index.html#gallery">Заплывы</a>
+        <a href="news.html" aria-current="page">Новости</a>
+        <a href="index.html#contacts">Контакты</a>
+      </nav>
+      <a href="index.html#join" class="btn btn-accent btn-sm">Записаться</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs"><a href="index.html">Главная</a> <span>/</span> Новости</nav>
+      <h1>Новости команды</h1>
+      <p class="muted">Соревнования, открытая вода, тренировки и поездки LP&nbsp;Crew.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="news-grid" id="newsList"><!-- рендерится из news-data.js --></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo logo-light">LP&nbsp;Crew</a>
+        <p class="muted">Душевная команда пловцов любителей из Ханты-Мансийска. С 2019 года.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>Бассейн Аквапарка, АУ «ЮграМегаСпорт»<br>Ледовая улица, 1, Ханты-Мансийск</p>
+        <p><a href="mailto:dolphin-90@yandex.ru">dolphin-90@yandex.ru</a></p>
+      </div>
+      <div>
+        <h4>Мы в сети</h4>
+        <p><a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a><br>
+        <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted small">© 2019–2026 LP Crew. Все фото и видео принадлежат их владельцам и использованы в целях демонстрации.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/news-data.js"></script>
+  <script src="js/news-list.js"></script>
+</body>
+</html>

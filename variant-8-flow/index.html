@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLOW — LP CREW · Подбери свой маршрут в воде</title>
+  <meta name="description" content="LP CREW — душевная команда пловцов из Ханты-Мансийска с 2019 года. Подбери формат тренировок: бассейн, открытая вода или онлайн.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="hd" id="top">
+    <a href="#top" class="brand">LP<span>/</span>CREW</a>
+    <nav class="nav">
+      <a href="#quiz">Подбор</a>
+      <a href="#path">Путь</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#pricing">Абонементы</a>
+      <a href="#coaches">Тренеры</a>
+      <a href="#faq">FAQ</a>
+      <a href="news.html">Новости</a>
+    </nav>
+    <a href="#join" class="btn btn-accent hd-cta">Записаться</a>
+  </header>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    </div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-pill"><b></b>LP CREW · Ханты-Мансийск · с 2019</span>
+          <h1>Найди свой <span class="hl">маршрут</span> в воде</h1>
+          <p class="sub">Душевная команда пловцов-любителей. Бассейн, открытая вода и онлайн — подберём формат под твой уровень и цель за пару кликов.</p>
+          <div class="hero-actions">
+            <a href="#quiz" class="btn btn-accent btn-lg">Подобрать тренировку</a>
+            <a href="#path" class="btn btn-line btn-lg">Как начать</a>
+          </div>
+          <div class="hero-stats">
+            <div class="s"><b>317</b><span>научили плавать</span></div>
+            <div class="s"><b>54</b><span>на соревнованиях</span></div>
+            <div class="s"><b>380,4&nbsp;км</b><span>открытой воды</span></div>
+            <div class="s"><b>22</b><span>водоёма</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card"><img src="../img/p06.jpg" alt="Пловцы LP CREW в открытой воде на закате" width="600" height="480"></div>
+          <div class="hero-float">
+            <div class="ic" aria-hidden="true">🌊</div>
+            <div class="t"><b>Пробная — бесплатно</b><span>познакомимся в воде</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. QUIZ -->
+  <section class="sec quiz-sec" id="quiz">
+    <div class="wrap center">
+      <p class="kicker">Интерактивный подбор</p>
+      <h2>Подберём группу за 3 шага</h2>
+      <p class="sec-lead" style="margin:0 auto">Ответь на три вопроса — покажем формат тренировок, который подходит именно тебе.</p>
+    </div>
+    <div class="wrap">
+      <div class="quiz" id="quiz-box" aria-live="polite">
+        <div class="quiz-progress" aria-hidden="true">
+          <i class="done"></i><i></i><i></i>
+        </div>
+        <div id="quiz-mount"><!-- JS renders steps here --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PATH / TIMELINE -->
+  <section class="sec" id="path">
+    <div class="wrap center">
+      <p class="kicker">Путь новичка</p>
+      <h2>От заявки до первого заплыва</h2>
+      <p class="sec-lead" style="margin:0 auto">Спокойно и по шагам — даже если ты пока не умеешь держаться на воде.</p>
+    </div>
+    <div class="wrap">
+      <div class="timeline" id="timeline">
+        <div class="tl-step"><div class="dot">1</div><div class="tl-card"><h4>Заявка</h4><p>Оставляешь контакт — отвечаем и подбираем время.</p></div></div>
+        <div class="tl-step"><div class="dot">2</div><div class="tl-card"><h4>Пробная тренировка</h4><p>Бесплатное занятие, знакомимся с тренером и водой.</p></div></div>
+        <div class="tl-step"><div class="dot">3</div><div class="tl-card"><h4>Группа по уровню</h4><p>Попадаешь в группу, где комфортно расти.</p></div></div>
+        <div class="tl-step"><div class="dot">4</div><div class="tl-card"><h4>Первый заплыв</h4><p>Открытая вода, дистанция, новая цель.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SCHEDULE -->
+  <section class="sec quiz-sec" id="schedule">
+    <div class="wrap center">
+      <p class="kicker">Расписание</p>
+      <h2>Неделя в воде</h2>
+      <p class="sec-lead" style="margin:0 auto">Утро и вечер в бассейне, открытая вода летом и онлайн-планы круглый год.</p>
+    </div>
+    <div class="wrap">
+      <div class="sched-filters" role="group" aria-label="Фильтр тренировок">
+        <button class="chip active" data-filter="all" aria-pressed="true">Все</button>
+        <button class="chip" data-filter="pool" aria-pressed="false">Бассейн</button>
+        <button class="chip" data-filter="open" aria-pressed="false">Открытая вода</button>
+        <button class="chip" data-filter="online" aria-pressed="false">Online</button>
+      </div>
+      <div class="sched-grid" id="sched-grid"><!-- JS renders --></div>
+      <p class="sched-note">Открытая вода — сезонно, летом. Точное время уточняем в чате после заявки.</p>
+    </div>
+  </section>
+
+  <!-- 5. PRICING -->
+  <section class="sec pricing-sec" id="pricing">
+    <div class="wrap center">
+      <p class="kicker">Тарифы</p>
+      <h2>Абонементы</h2>
+      <p class="sec-lead" style="margin:0 auto">Выбирай формат — от разового занятия до онлайн-сопровождения.</p>
+    </div>
+    <div class="wrap">
+      <div class="price-grid">
+        <div class="price">
+          <h3>Разовая</h3>
+          <p class="pdesc">Попробовать без обязательств</p>
+          <div class="amt">от 700&nbsp;<small>₽</small></div>
+          <div class="per">за одно занятие</div>
+          <ul>
+            <li>Тренировка в бассейне</li>
+            <li>Работа с тренером в группе</li>
+            <li>Без абонемента</li>
+          </ul>
+          <a href="#join" class="btn btn-line">Записаться</a>
+        </div>
+        <div class="price pop">
+          <span class="tag">Популярный</span>
+          <h3>Абонемент · 8 занятий</h3>
+          <p class="pdesc">Стабильный прогресс по технике</p>
+          <div class="amt">от 4 800&nbsp;<small>₽</small></div>
+          <div class="per">8 занятий · бассейн + открытая вода</div>
+          <ul>
+            <li>8 тренировок в месяц</li>
+            <li>Видеоразбор техники</li>
+            <li>Выходы на открытую воду летом</li>
+            <li>Поддержка команды</li>
+          </ul>
+          <a href="#join" class="btn btn-accent">Записаться</a>
+        </div>
+        <div class="price">
+          <h3>Online-план</h3>
+          <p class="pdesc">Тренируйся из любого города</p>
+          <div class="amt">от 2 900&nbsp;<small>₽</small></div>
+          <div class="per">в месяц · с сопровождением</div>
+          <ul>
+            <li>Персональный план тренировок</li>
+            <li>Сопровождение тренера в чате</li>
+            <li>Видеоразбор по записям</li>
+          </ul>
+          <a href="#join" class="btn btn-line">Записаться</a>
+        </div>
+      </div>
+      <p class="price-note">Цены демонстрационные — финальную стоимость подскажем после пробного занятия.</p>
+    </div>
+  </section>
+
+  <!-- 6. COACHES -->
+  <section class="sec" id="coaches">
+    <div class="wrap center">
+      <p class="kicker">Тренеры</p>
+      <h2>Команда, с которой не страшно</h2>
+    </div>
+    <div class="wrap">
+      <div class="coach-grid">
+        <div class="coach">
+          <div class="ph"><img src="../img/p08.jpg" alt="Тренер Камилия" loading="lazy"></div>
+          <div class="cb"><h4>Камилия</h4><div class="role">Тренер · техника</div><p>Ставит гребок и дыхание с нуля, спокойно ведёт новичков к первой дистанции.</p></div>
+        </div>
+        <div class="coach">
+          <div class="ph"><img src="../img/p07.jpg" alt="Тренер Лера" loading="lazy"></div>
+          <div class="cb"><h4>Лера</h4><div class="role">Тренер · открытая вода</div><p>Готовит к заплывам на открытой воде и соревнованиям, держит темп команды.</p></div>
+        </div>
+        <div class="coach">
+          <div class="ph"><img src="../img/p01.jpg" alt="Тренер Лилия" loading="lazy"></div>
+          <div class="cb"><h4>Лилия</h4><div class="role">Тренер · онлайн</div><p>Ведёт online-планы и видеоразбор, поддерживает тех, кто тренируется удалённо.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. REVIEWS -->
+  <section class="sec quiz-sec" id="reviews">
+    <div class="wrap center">
+      <p class="kicker">Отзывы</p>
+      <h2>Что говорят пловцы</h2>
+    </div>
+    <div class="wrap">
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="qm" aria-hidden="true">“</div>
+          <p>Пришла, не умея держаться на воде. Через полгода — первый открытый заплыв.</p>
+          <div class="who"><span class="av">М</span><div><b>Марина</b><span>группа новичков</span></div></div>
+        </div>
+        <div class="rev">
+          <div class="qm" aria-hidden="true">“</div>
+          <p>Душевная атмосфера и грамотная техника. Видеоразбор изменил мой гребок.</p>
+          <div class="who"><span class="av">А</span><div><b>Андрей</b><span>техника и открытая вода</span></div></div>
+        </div>
+        <div class="rev">
+          <div class="qm" aria-hidden="true">“</div>
+          <p>Online-тренировки удобны даже в командировках.</p>
+          <div class="who"><span class="av">О</span><div><b>Ольга</b><span>online-план</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap center">
+      <p class="kicker">Вопросы</p>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="wrap">
+      <div class="faq" id="faq">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Нужно ли уметь плавать?</span><span class="ico" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div class="faq-a-in">Нет. Большинство приходят, не умея держаться на воде — для этого есть группа для новичков, где всё с нуля и без спешки.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Что взять с собой?</span><span class="ico" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div class="faq-a-in">Купальник или плавки, шапочку, очки и полотенце. Если чего-то нет — подскажем, что докупить, на пробной тренировке.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Есть ли пробное занятие?</span><span class="ico" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div class="faq-a-in">Да, первое занятие — бесплатное. Познакомишься с тренером и группой, попробуешь воду без обязательств.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Тренировки только летом?</span><span class="ico" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div class="faq-a-in">Нет. Бассейн работает круглый год, утром и вечером. Открытая вода — сезонно, летом, а онлайн-планы доступны всегда.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Можно ли заниматься онлайн из другого города?</span><span class="ico" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div class="faq-a-in">Конечно. Online-план включает персональную программу, сопровождение тренера в чате и видеоразбор по твоим записям.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. NEWS TEASER -->
+  <section class="sec quiz-sec" id="news">
+    <div class="wrap center">
+      <p class="kicker">Журнал</p>
+      <h2>Новости команды</h2>
+    </div>
+    <div class="wrap">
+      <div class="news-teaser">
+        <a class="post" href="article.html?id=sberprime-green-marathon">
+          <img src="../img/marathon-2.jpg" alt="СберПрайм Зелёный марафон" loading="lazy">
+          <div class="post-b"><time>Соревнования</time><h3>СберПрайм Зелёный марафон</h3><p>Команда вышла на старт и пробежала все дистанции — от 400 м до полумарафона.</p><span class="more">Читать →</span></div>
+        </a>
+        <a class="post" href="article.html?id=xwaters-ugra-2024">
+          <img src="../img/p06.jpg" alt="Итоги сезона X-Waters Ugra" loading="lazy">
+          <div class="post-b"><time>Соревнования</time><h3>Итоги сезона X-Waters Ugra</h3><p>Заплывы на открытой воде Югры — дистанции и новые личные рекорды.</p><span class="more">Читать →</span></div>
+        </a>
+        <a class="post" href="article.html?id=xwaters-thailand">
+          <img src="../img/p02.jpg" alt="X-Waters Thailand" loading="lazy">
+          <div class="post-b"><time>Путешествия</time><h3>Команда покоряет океан</h3><p>X-Waters Thailand: тёплая вода, океан и техника — заряд на весь сезон.</p><span class="more">Читать →</span></div>
+        </a>
+      </div>
+      <div class="news-more"><a href="news.html" class="btn btn-line">Все новости</a></div>
+    </div>
+  </section>
+
+  <!-- 10. FINAL CTA + FORM -->
+  <section class="cta-sec" id="join">
+    <div class="wrap">
+      <div class="cta">
+        <div class="cta-grid">
+          <div>
+            <h2>Готов нырнуть?</h2>
+            <p>Оставь заявку — ответим, подберём время и пригласим на бесплатную пробную тренировку.</p>
+          </div>
+          <form class="cta-form" id="join-form" novalidate>
+            <input type="text" name="name" placeholder="Имя" aria-label="Имя" required>
+            <input type="tel" name="phone" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" required>
+            <button type="submit" class="btn btn-accent btn-lg">Записаться на пробную</button>
+            <p class="note" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft-grid">
+        <div>
+          <a href="#top" class="brand">LP<span>/</span>CREW</a>
+          <p>Душевная команда пловцов-любителей из Ханты-Мансийска. С 2019 года.</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <p>Бассейн Аквапарка, ЮграМегаСпорт<br>Ледовая ул. 1, Ханты-Мансийск</p>
+          <p><a href="mailto:dolphin-90@yandex.ru">dolphin-90@yandex.ru</a></p>
+        </div>
+        <div>
+          <h4>Соцсети</h4>
+          <p><a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a><br><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></p>
+        </div>
+      </div>
+      <p class="copy">© 2019–2026 LP CREW. Фото использованы для демонстрации.</p>
+    </div>
+  </footer>
+
+  <script src="js/flow.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Crew — 3 варианта редизайна</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0e1b2a;
+      color: #fff;
+      line-height: 1.6;
+      padding: 48px 24px;
+      min-height: 100vh
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto
+    }
+
+    h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 8px
+    }
+
+    .sub {
+      color: #9fb4c4;
+      margin-bottom: 40px;
+      max-width: 640px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    .card {
+      display: block;
+      background: #16263a;
+      border: 1px solid #25415c;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+      color: #fff
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #3a9
+    }
+
+    .thumb {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem
+    }
+
+    .t1 {
+      background: linear-gradient(160deg, #0a4d8c, #0094c6 55%, #00b8a9)
+    }
+
+    .t2 {
+      background: #0c0c0e;
+      color: #8fd6e0;
+      font-family: 'Cormorant Garamond', serif
+    }
+
+    .t3 {
+      background: #ffd23f;
+      color: #10121a
+    }
+
+    .t4 {
+      background: #0a0a0b;
+      color: #d6ff3f;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: .04em
+    }
+
+    .t6 {
+      background: #faf8f4;
+      color: #1f5e57;
+      font-family: Georgia, serif
+    }
+
+    .t7 {
+      background: linear-gradient(180deg, #19c6c9, #0094c6 40%, #02101f);
+      color: #bdf6ff;
+      font-family: 'Manrope', sans-serif
+    }
+
+    .t8 {
+      background: linear-gradient(135deg, #00b8a9, #0094c6);
+      color: #eafffb;
+      font-family: 'Manrope', sans-serif
+    }
+
+    .t9 {
+      background: conic-gradient(from 200deg at 30% 30%, #00c2cb, #5b8def, #a06bff, #3ee0b0, #00c2cb);
+      color: #10121a;
+      font-family: 'Manrope', sans-serif
+    }
+
+    .t10 {
+      background: #08090b;
+      color: #c6ff32;
+      font-family: Impact, 'Anton', sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-bottom: 3px solid #c6ff32
+    }
+
+    .t11 {
+      background: #f2ede4;
+      color: #15110c;
+      font-family: Impact, 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      border-bottom: 5px solid #e30613
+    }
+
+    .t12 {
+      background: #ffffff;
+      color: #14130f;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      border: 1px solid #e7e6e0;
+      border-bottom: 4px solid #0b6bcb
+    }
+
+    .t13 {
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: -.02em
+    }
+
+    .body {
+      padding: 20px 22px
+    }
+
+    .body h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 6px
+    }
+
+    .body p {
+      color: #9fb4c4;
+      font-size: .9rem
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: .8rem;
+      color: #7fe7d8;
+      font-weight: 600
+    }
+
+    .links {
+      margin-top: 40px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .92rem
+    }
+
+    .links a {
+      color: #7fe7d8
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #5e7488;
+      font-size: .85rem
+    }
+
+    @media(max-width:760px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>LP Crew — 12 вариантов редизайна</h1>
+    <div class="grid">
+      <a class="card" href="variant-1-aqua/index.html">
+        <div class="thumb t1">AQUA</div>
+        <div class="body">
+          <h2>1 · Aqua</h2><span class="tagline">Доверие · универсальность</span>
+        </div>
+      </a>
+      <a class="card" href="variant-2-noir/index.html">
+        <div class="thumb t2">NOIR</div>
+        <div class="body">
+          <h2>2 · Noir</h2><span class="tagline">Характер · премиум</span>
+        </div>
+      </a>
+      <a class="card" href="variant-3-splash/index.html">
+        <div class="thumb t3">SPLASH</div>
+        <div class="body">
+          <h2>3 · Splash</h2><span class="tagline">Эмоция · community</span>
+        </div>
+      </a>
+      <a class="card" href="variant-4-pulse/index.html">
+        <div class="thumb t4">PULSE</div>
+        <div class="body">
+          <h2>4 · Pulse</h2><span class="tagline">Энергия · спорт</span>
+        </div>
+      </a>
+      <a class="card" href="variant-6-editorial/index.html">
+        <div class="thumb t6">EDITORIAL</div>
+        <div class="body">
+          <h2>5 · Editorial</h2><span class="tagline">Редакционный · премиум</span>
+        </div>
+      </a>
+      <a class="card" href="variant-7-depth/index.html">
+        <div class="thumb t7">DEPTH</div>
+        <div class="body">
+          <h2>6 · Depth</h2><span class="tagline">Иммерсив · кинематограф</span>
+        </div>
+      </a>
+      <a class="card" href="variant-8-flow/index.html">
+        <div class="thumb t8">FLOW</div>
+        <div class="body">
+          <h2>7 · Flow <small style="font-weight:600;color:#7fe7d8">· другая структура</small></h2><span
+            class="tagline">Конверсия · новые секции</span>
+        </div>
+      </a>
+      <a class="card" href="variant-9-aurora/index.html">
+        <div class="thumb t9">AURORA</div>
+        <div class="body">
+          <h2>8 · Aurora</h2><span class="tagline">Премиум · стекло</span>
+        </div>
+      </a>
+      <a class="card" href="variant-10-kinetic/index.html">
+        <div class="thumb t10">KINETIC</div>
+        <div class="body">
+          <h2>9 · Kinetic</h2><span class="tagline">Энергия · кинетика</span>
+        </div>
+      </a>
+      <a class="card" href="variant-11-bulletin/index.html">
+        <div class="thumb t11">BULLETIN</div>
+        <div class="body">
+          <h2>10 · Bulletin</h2><span class="tagline">Журнал · сторител</span>
+        </div>
+      </a>
+      <a class="card" href="variant-12-lifestyle/index.html">
+        <div class="thumb t12">LIFESTYLE</div>
+        <div class="body">
+          <h2>11 · Lifestyle</h2><span class="tagline">Чистый аутдор</span>
+        </div>
+      </a>
+      <a class="card" href="variant-13-cupertino/index.html">
+        <div class="thumb t13">Cupertino</div>
+        <div class="body">
+          <h2>12 · Cupertino</h2><span class="tagline">Apple · минимал</span>
+        </div>
+      </a>
+    </div>
+    <div class="links">
+      <a href="https://lpcrew.ru/" target="_blank" rel="noopener">🔗 Текущий сайт lpcrew.ru</a>
+    </div>
+    <footer>Прототипы используют реальные фото с lpcrew.ru в демонстрационных целях.</footer>
+  </div>
+</body>
+
+</html>
