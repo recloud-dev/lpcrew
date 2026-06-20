@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Crew — от первого выдоха в воду до заплывов в океане</title>
+  <meta name="description" content="LP Crew — команда пловцов из Ханты-Мансийска. Бассейн, открытая вода, соревнования по всему миру. От первого выдоха в воду до заплывов в океане.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dive intro / loader (как в depth) -->
+  <div class="dive-intro" id="diveIntro" aria-hidden="true">
+    <div class="di-inner">
+      <div class="di-mark">LP&nbsp;CREW</div>
+      <div class="di-sub">Погружение · Tidal</div>
+    </div>
+    <button class="di-skip" id="diveSkip">Пропустить погружение ↓</button>
+  </div>
+
+  <header class="hd">
+    <a href="#top" class="brand">LP&nbsp;CREW</a>
+    <nav class="nav">
+      <a href="#about">01 — Команда</a>
+      <a href="#disciplines">02 — Дисциплины</a>
+      <a href="#field">03 — Вода</a>
+      <a href="#coaches">04 — Тренеры</a>
+      <a href="#pricing">05 — Абонементы</a>
+      <a href="news.html">06 — Журнал</a>
+      <a href="#join">07 — Связаться</a>
+    </nav>
+    <span class="hd-loc">64°N · Ханты-Мансийск</span>
+  </header>
+
+  <!-- Hero — изображения меняются по таймеру -->
+  <section class="hero" id="top">
+    <div class="hero-slides" id="heroSlides">
+      <img class="hero-img is-active" src="../img/p04.jpg" alt="Финиш заплыва на открытой воде">
+      <img class="hero-img" src="../img/p06.jpg" alt="Заплыв с флагом команды">
+      <img class="hero-img" src="../img/p03.jpg" alt="Сборы на открытой воде">
+      <img class="hero-img" src="../img/p01.jpg" alt="Заплыв в океане">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="tag">Любительская команда пловцов · с 2019</p>
+      <h1>Открытая<br><em>вода.</em></h1>
+      <p class="lead">От первого выдоха в воду до заплывов в океане. Характер закаляется там, где холодно и далеко до берега — бассейн, реки Югры и океаны мира.</p>
+      <a href="#join" class="link-arrow">Присоединиться к заплыву →</a>
+    </div>
+    <div class="hero-meta">
+      <span>↓ SCROLL</span><span>Дельфин-90</span>
+    </div>
+  </section>
+
+  <!-- Бегущая строка с подписным шрифтом (как в kinetic) -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><b>от бассейна до океана</b><i class="star">✦</i><em class="sign">плыви с нами</em><i class="star">✦</i></span>
+      <span><b>от бассейна до океана</b><i class="star">✦</i><em class="sign">плыви с нами</em><i class="star">✦</i></span>
+      <span><b>от бассейна до океана</b><i class="star">✦</i><em class="sign">плыви с нами</em><i class="star">✦</i></span>
+      <span><b>от бассейна до океана</b><i class="star">✦</i><em class="sign">плыви с нами</em><i class="star">✦</i></span>
+    </div>
+  </section>
+
+  <!-- Stats — цифры крутятся при прокрутке (как в aqua) -->
+  <section class="stats" id="stats">
+    <div class="stats-grid">
+      <div class="stat"><span class="stat-num" data-target="317">0</span><span class="stat-suf">чел.</span><p>Научили плавать</p></div>
+      <div class="stat"><span class="stat-num" data-target="54">0</span><span class="stat-suf">чел.</span><p>Участвуют в соревнованиях</p></div>
+      <div class="stat"><span class="stat-num" data-target="380.4" data-decimals="1">0</span><span class="stat-suf">км</span><p>Проплыли на открытой воде</p></div>
+      <div class="stat"><span class="stat-num" data-target="22">0</span><span class="stat-suf"></span><p>Рек, озёр и океанов</p></div>
+    </div>
+  </section>
+
+  <!-- About — editorial split -->
+  <section class="ed" id="about">
+    <div class="ed-num">01</div>
+    <div class="ed-grid">
+      <div class="ed-text">
+        <h2>Душевная команда<br>из&nbsp;Югры</h2>
+        <p class="big">Мы живём, работаем и тренируемся в Ханты-Мансийске. Люди разных возрастов и профессий, объединённые одним — любовью к воде.</p>
+        <p>Наша цель проста — чтобы плавание приносило радость, здоровье и новые горизонты: от спокойного бассейна до открытой воды по всему миру.</p>
+        <ul class="aim">
+          <li>Бассейн и открытая вода</li>
+          <li>Любой уровень — от нуля до соревнований</li>
+          <li>Online-сопровождение в любом городе</li>
+        </ul>
+        <p>Основана в 2019 году. Вдохновляем на плавание и здоровый образ жизни — от первого вдоха до океанских заплывов.</p>
+      </div>
+      <figure class="ed-fig">
+        <img class="tone" src="../img/p07.jpg" alt="Команда LP Crew в Ханты-Мансийске">
+        <figcaption>Команда. Ханты-Мансийск.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Season — программа по сезонам -->
+  <section class="ed alt season" id="season">
+    <div class="ed-num">02</div>
+    <h2 class="ed-head">Круглый год в воде</h2>
+    <div class="season-grid">
+      <article class="season-card">
+        <span class="s-tag">Зима · осень</span>
+        <h3>В бассейне — база сезона</h3>
+        <p>Пока на улице холодно, переносим тренировки в бассейн Аквапарка. Ставим технику, разбираем гребок по элементам и набираем форму к лету.</p>
+      </article>
+      <article class="season-card">
+        <span class="s-tag">Сезон · лето</span>
+        <h3>Открытая вода — сезон лето</h3>
+        <p>С июня выходим на реки Югры: сборы, контрольные заплывы и старты на открытой воде. Лодки сопровождения с флагом команды идут рядом на всей трассе.</p>
+      </article>
+      <article class="season-card">
+        <span class="s-tag">Круглый год</span>
+        <h3>Online-планы — в любом городе</h3>
+        <p>Персональная программа, сопровождение тренера в чате и видеоразбор по твоим записям. Тренер рядом в любой точке — где бы ты ни был.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Disciplines -->
+  <section class="ed" id="disciplines">
+    <div class="ed-num">03</div>
+    <h2 class="ed-head">Дисциплины</h2>
+    <ol class="disc">
+      <li><span class="d-i">01</span><div><h3>Бассейн и открытая вода</h3><p>Регулярные тренировки в Аквапарке и на реках Югры. Техника, выносливость, скорость.</p></div></li>
+      <li><span class="d-i">02</span><div><h3>Бесплатные тренировки</h3><p>Блоки на выносливость, скорость и дыхание. Попробуй формат команды.</p></div></li>
+      <li><span class="d-i">03</span><div><h3>Online-планы</h3><p>Любой город, любая страна. Индивидуальный план и сопровождение на дистанции.</p></div></li>
+      <li><span class="d-i">04</span><div><h3>Видеоразбор техники</h3><p>Съёмка под водой с тренером. Разберём твой гребок по кадрам.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- Coaches — кто ведёт к воде -->
+  <section class="ed alt" id="coaches">
+    <div class="ed-num">04</div>
+    <h2 class="ed-head">Кто ведёт к&nbsp;воде</h2>
+    <div class="coach-grid">
+      <figure class="coach">
+        <img class="coach-av tone" src="../img/p08.jpg" alt="Тренер Камилия">
+        <figcaption>
+          <h3>Камилия</h3>
+          <span class="c-role">Тренер · техника</span>
+          <p>Ставит гребок и дыхание с нуля, спокойно ведёт новичков к первой дистанции.</p>
+        </figcaption>
+      </figure>
+      <figure class="coach">
+        <img class="coach-av tone" src="../img/p07.jpg" alt="Тренер Лера">
+        <figcaption>
+          <h3>Лера</h3>
+          <span class="c-role">Тренер · открытая вода</span>
+          <p>Готовит к заплывам на открытой воде и соревнованиям, держит темп команды.</p>
+        </figcaption>
+      </figure>
+      <figure class="coach">
+        <img class="coach-av tone" src="../img/p01.jpg" alt="Тренер Лилия">
+        <figcaption>
+          <h3>Лилия</h3>
+          <span class="c-role">Тренер · онлайн</span>
+          <p>Ведёт online-планы и видеоразбор. Тренер рядом в любой точке — поддержка тех, кто тренируется удалённо.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Field / fullbleed gallery — водоёмы кликабельны -->
+  <section class="field" id="field">
+    <div class="ed-num light">05</div>
+    <h2 class="field-head">22 водоёма. <em>От Оби до океана.</em></h2>
+    <p class="field-lead">От домашнего Иртыша до океана за тысячи километров от дома — каждый заплыв со своей историей. Нажми, чтобы открыть.</p>
+    <div class="strip" id="swimStrip"><!-- из swims-data.js / main.js --></div>
+  </section>
+
+  <!-- Pricing / Абонементы (как во flow) -->
+  <section class="ed alt pricing" id="pricing">
+    <div class="ed-num">06</div>
+    <h2 class="ed-head">Абонементы</h2>
+    <p class="big">Выбирай формат — от разового занятия до онлайн-сопровождения.</p>
+    <div class="price-grid">
+      <div class="price">
+        <h3>Разовая</h3>
+        <p class="pdesc">Попробовать без обязательств</p>
+        <div class="amt">от 700&nbsp;<small>₽</small></div>
+        <div class="per">за одно занятие</div>
+        <ul>
+          <li>Тренировка в бассейне</li>
+          <li>Работа с тренером в группе</li>
+          <li>Без абонемента</li>
+        </ul>
+        <a href="#join" class="link-arrow">Записаться →</a>
+      </div>
+      <div class="price pop">
+        <span class="p-tag">Популярный</span>
+        <h3>Абонемент · 8 занятий</h3>
+        <p class="pdesc">Стабильный прогресс по технике</p>
+        <div class="amt">от 4&nbsp;800&nbsp;<small>₽</small></div>
+        <div class="per">8 занятий · бассейн + открытая вода</div>
+        <ul>
+          <li>8 тренировок в месяц</li>
+          <li>Видеоразбор техники</li>
+          <li>Выходы на открытую воду летом</li>
+          <li>Поддержка команды</li>
+        </ul>
+        <a href="#join" class="link-arrow">Записаться →</a>
+      </div>
+      <div class="price">
+        <h3>Online-план</h3>
+        <p class="pdesc">Тренируйся из любого города</p>
+        <div class="amt">от 2&nbsp;900&nbsp;<small>₽</small></div>
+        <div class="per">в месяц · с сопровождением</div>
+        <ul>
+          <li>Персональный план тренировок</li>
+          <li>Сопровождение тренера в чате</li>
+          <li>Видеоразбор по записям</li>
+        </ul>
+        <a href="#join" class="link-arrow">Записаться →</a>
+      </div>
+    </div>
+    <p class="price-note">Цены демонстрационные — финальную стоимость подскажем после пробного занятия.</p>
+  </section>
+
+  <!-- Reviews — несколько, с прокруткой -->
+  <section class="reviews" id="reviews">
+    <div class="ed-num light">07</div>
+    <h2 class="rev-head">Что говорят пловцы</h2>
+    <div class="rev-strip" id="revStrip"><!-- из reviews-data.js / main.js --></div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote">
+    <blockquote>«От первого выдоха в воду до заплывов в океане. Пришла, не умея держаться на воде — через полгода проплыла первый открытый заплыв.»</blockquote>
+    <cite>— ученица LP Crew</cite>
+  </section>
+
+  <!-- FAQ (как во flow) -->
+  <section class="ed faq-sec" id="faq">
+    <div class="ed-num">08</div>
+    <h2 class="ed-head">Частые вопросы</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Нужно ли уметь плавать?</span><span class="ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Нет. Большинство приходят, не умея держаться на воде — для этого есть группа для новичков, где всё с нуля и без спешки.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Что взять с собой?</span><span class="ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Купальник или плавки, шапочку, очки и полотенце. Если чего-то нет — подскажем, что докупить, на пробной тренировке.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Есть ли пробное занятие?</span><span class="ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Да, первое занятие — бесплатное. Познакомишься с тренером и группой, попробуешь воду без обязательств.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Тренировки только летом?</span><span class="ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Нет. Бассейн работает круглый год, утром и вечером. Открытая вода — сезонно, летом, а онлайн-планы доступны всегда.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Можно ли заниматься онлайн из другого города?</span><span class="ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Конечно. Online-план включает персональную программу, сопровождение тренера в чате и видеоразбор по твоим записям. Тренер рядом в любой точке.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section class="ed join" id="join">
+    <div class="ed-num">09</div>
+    <div class="join-grid">
+      <div>
+        <h2>Войти<br>в&nbsp;воду</h2>
+        <p class="big">Оставьте контакт — расскажем про группы и расписание. Или напишите сразу.</p>
+        <div class="links">
+          <a href="https://t.me/" target="_blank" rel="noopener">Telegram ↗</a>
+          <a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте ↗</a>
+          <a href="mailto:dolphin-90@yandex.ru">dolphin-90@yandex.ru ↗</a>
+        </div>
+      </div>
+      <form class="form" onsubmit="return false">
+        <input type="text" placeholder="ИМЯ" required>
+        <input type="tel" placeholder="ТЕЛЕФОН" required>
+        <button type="submit">Отправить заявку →</button>
+        <p class="note">Демо-прототип. На бою — Telegram-бот / CRM.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer — структура как в cupertino -->
+  <footer class="ft-big">
+    <p class="ft-note">LP Crew — команда пловцов-любителей из Ханты-Мансийска. От первого выдоха в воду до заплывов в океане. Фотографии с lpcrew.ru использованы в демонстрационных целях.</p>
+    <div class="ft-cols">
+      <div>
+        <h4>Тренировки</h4>
+        <a href="#disciplines">Бассейн и открытая вода</a>
+        <a href="#season">Сезоны</a>
+        <a href="#pricing">Абонементы</a>
+        <a href="#join">Первая бесплатно</a>
+      </div>
+      <div>
+        <h4>Команда</h4>
+        <a href="#coaches">Тренеры</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#field">Заплывы</a>
+        <a href="news.html">Журнал</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="mailto:dolphin-90@yandex.ru">dolphin-90@yandex.ru</a>
+        <a href="#">Ледовая ул. 1, Ханты-Мансийск</a>
+        <a href="#faq">Частые вопросы</a>
+      </div>
+      <div>
+        <h4>Мы в сети</h4>
+        <a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>LP CREW © 2019–2026</span>
+      <span>Бассейн Аквапарка · Ледовая ул. 1 · Ханты-Мансийск</span>
+      <a href="#top">НАВЕРХ ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/swims-data.js"></script>
+  <script src="js/reviews-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
