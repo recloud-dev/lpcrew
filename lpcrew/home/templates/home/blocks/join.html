@@ -1,0 +1,23 @@
+{% load wagtailcore_tags %}
+<section class="ed join" id="join">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  <div class="join-grid">
+    <div>
+      {% if self.heading or self.heading2 %}<h2 class="join-title" data-game-open role="button" tabindex="0">{{ self.heading }}{% if self.heading2 %}{% if self.heading %}<br>{% endif %}{{ self.heading2 }}{% endif %}</h2>{% endif %}
+      {% if self.big %}<p class="big">{{ self.big }}</p>{% endif %}
+      {% if self.links %}
+      <div class="links">
+        {% for l in self.links %}{% if l.label or l.url %}<a href="{{ l.url }}"{% if l.url|slice:":4" == "http" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }} ↗</a>{% endif %}{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <form class="form" id="joinForm" action="{% url 'leads:submit' %}" method="post" novalidate>
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="ИМЯ" autocomplete="name" required>
+      <input type="tel" name="phone" placeholder="ТЕЛЕФОН" autocomplete="tel" required>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <button type="submit">Отправить заявку →</button>
+      <p class="note">{% if self.note %}{{ self.note }}{% endif %}</p>
+    </form>
+  </div>
+</section>

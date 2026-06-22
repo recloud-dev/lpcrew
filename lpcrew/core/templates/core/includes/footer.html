@@ -1,0 +1,20 @@
+{% with foot=settings.core.FooterSettings site=settings.core.SiteSettings %}
+<footer class="ft-big">
+  {% if foot.note %}<p class="ft-note">{{ foot.note }}</p>{% endif %}
+  {% if foot.columns %}
+  <div class="ft-cols">
+    {% for col in foot.columns %}
+    <div>
+      <h4>{{ col.value.heading }}</h4>
+      {% for link in col.value.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="ft-bottom">
+    <span>{{ foot.copyright }}</span>
+    {% if site.address %}<span>{{ site.address }}</span>{% endif %}
+    <a href="#top">НАВЕРХ ↑</a>
+  </div>
+</footer>
+{% endwith %}

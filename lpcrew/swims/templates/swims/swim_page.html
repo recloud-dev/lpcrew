@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block og_image %}{% if page.cover %}{% image page.cover fill-1200x630 as og %}<meta property="og:image" content="{{ og.full_url }}">{% endif %}{% endblock %}
+
+{% block content %}
+<article class="art">
+  <div class="art-cover">
+    {% if page.cover %}{% image page.cover fill-1600x900 alt=page.title %}{% endif %}
+    <div class="art-cover-shade"></div>
+    <div class="art-head">
+      <p class="tag">{% if page.place %}{{ page.place }}{% endif %}{% if page.distance %} · {{ page.distance }}{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+
+  <div class="art-body">
+    {% if page.lead %}<p class="lead big">{{ page.lead }}</p>{% endif %}
+
+    {% if page.gallery.all %}
+    <div class="carousel" aria-roledescription="карусель" aria-label="Фотографии заплыва">
+      <div class="carousel-viewport"><div class="carousel-track">
+        {% for item in page.gallery.all %}
+        <figure class="slide" aria-label="{{ forloop.counter }} из {{ page.gallery.all|length }}">
+          {% image item.image fill-1000x625 alt=item.caption|default:page.title %}
+          {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+        </figure>
+        {% endfor %}
+      </div></div>
+      <button class="carousel-btn prev" aria-label="Назад">‹</button>
+      <button class="carousel-btn next" aria-label="Вперёд">›</button>
+      <div class="carousel-counter"><span class="cur">1</span> / {{ page.gallery.all|length }}</div>
+      <div class="carousel-dots">
+        {% for item in page.gallery.all %}<button class="dot{% if forloop.first %} active{% endif %}" data-i="{{ forloop.counter0 }}" aria-label="Фото {{ forloop.counter }}"></button>{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% for block in page.body %}{% include_block block %}{% endfor %}
+
+    <div class="art-cta">
+      <a href="/#join" class="link-arrow">Присоединиться к заплыву →</a>
+      <a href="{{ page.get_parent.url }}" class="link-arrow ghost">← Все заплывы</a>
+    </div>
+  </div>
+</article>
+
+{% if related %}
+<section class="field related">
+  <div class="ed-num light">＋</div>
+  <h2 class="field-head">Другие заплывы</h2>
+  <div class="strip">
+    {% for s in related %}
+    <a class="swim" href="{% pageurl s %}">
+      <figure>
+        {% if s.cover %}{% image s.cover fill-440x586 class="tone" alt=s.title loading="lazy" %}{% endif %}
+        <figcaption>
+          {% if s.place %}<span class="sw-place">{{ s.place }}</span>{% endif %}
+          <span class="sw-title">{{ s.title }} <i>↗</i></span>
+          {% if s.distance %}<span class="sw-dist">{{ s.distance }}</span>{% endif %}
+        </figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

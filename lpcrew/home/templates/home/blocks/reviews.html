@@ -1,0 +1,18 @@
+<section class="reviews" id="reviews">
+  {% if self.num %}<div class="ed-num light">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="rev-head">{{ self.headline }}</h2>{% endif %}
+  <div class="rev-strip">
+    {% for r in self.reviews %}
+    <figure class="rev">
+      <div class="qm" aria-hidden="true">“</div>
+      {% if r.text %}<blockquote>{{ r.text }}</blockquote>{% endif %}
+      {% if r.initial or r.name or r.role %}
+      <figcaption class="who">
+        {% if r.initial %}<span class="av">{{ r.initial }}</span>{% endif %}
+        <span>{% if r.name %}<b>{{ r.name }}</b>{% endif %}{% if r.role %}<span class="who-role">{{ r.role }}</span>{% endif %}</span>
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</section>

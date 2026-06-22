@@ -1,0 +1,20 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<section class="ed" id="about">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  <div class="ed-grid">
+    <div class="ed-text">
+      {% if self.heading or self.heading2 %}<h2>{{ self.heading }}{% if self.heading2 %}{% if self.heading %}<br>{% endif %}{{ self.heading2 }}{% endif %}</h2>{% endif %}
+      {% if self.big %}<p class="big">{{ self.big }}</p>{% endif %}
+      {% if self.body %}{{ self.body|richtext }}{% endif %}
+      {% if self.aim %}
+      <ul class="aim">{% for a in self.aim %}<li>{{ a }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    {% if self.image %}
+    <figure class="ed-fig">
+      {% image self.image fill-800x1000 class="tone" alt=self.caption|default:self.heading %}
+      {% if self.caption %}<figcaption>{{ self.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+  </div>
+</section>

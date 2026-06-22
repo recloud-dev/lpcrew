@@ -1,0 +1,18 @@
+{% load wagtailimages_tags %}
+<section class="hero" id="top">
+  <div class="hero-slides" id="heroSlides">
+    {% for img in self.images %}
+      <img class="hero-img{% if forloop.first %} is-active{% endif %}" src="{% image img fill-1600x1000 as h %}{{ h.url }}" alt="{{ self.heading }}">
+    {% endfor %}
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    {% if self.tag %}<p class="tag">{{ self.tag }}</p>{% endif %}
+    {% if self.heading or self.heading_em %}<h1>{{ self.heading }}{% if self.heading_em %}{% if self.heading %}<br>{% endif %}<em>{{ self.heading_em }}</em>{% endif %}</h1>{% endif %}
+    {% if self.lead %}<p class="lead">{{ self.lead }}</p>{% endif %}
+    {% if self.link_label %}<a href="{{ self.link_url }}" class="link-arrow">{{ self.link_label }} →</a>{% endif %}
+  </div>
+  <div class="hero-meta">
+    <span>↓ SCROLL</span>{% if self.meta_note %}<span>{{ self.meta_note }}</span>{% endif %}
+  </div>
+</section>

@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.pyc
+__pycache__/
+.env
+media/
+staticfiles/
+*.sqlite3
+.venv/
+poetry.lock

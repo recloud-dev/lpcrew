@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block og_image %}{% if page.cover %}{% image page.cover fill-1200x630 as og %}<meta property="og:image" content="{{ og.full_url }}">{% endif %}{% endblock %}
+
+{% block content %}
+<article class="art">
+  <div class="art-cover">
+    {% if page.cover %}{% image page.cover fill-1600x900 alt=page.title %}{% endif %}
+    <div class="art-cover-shade"></div>
+    <div class="art-head">
+      <p class="tag">{% if page.category %}{{ page.category }} · {% endif %}{{ page.date|date:"j E Y" }}</p>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+
+  <div class="art-body">
+    {% if page.lead %}<p class="lead big">{{ page.lead }}</p>{% endif %}
+
+    {% if page.gallery.all %}
+    <div class="carousel" aria-roledescription="карусель" aria-label="Фотографии">
+      <div class="carousel-viewport"><div class="carousel-track">
+        {% for item in page.gallery.all %}
+        <figure class="slide" aria-label="{{ forloop.counter }} из {{ page.gallery.all|length }}">
+          {% image item.image fill-1000x625 alt=item.caption|default:page.title %}
+          {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+        </figure>
+        {% endfor %}
+      </div></div>
+      <button class="carousel-btn prev" aria-label="Назад">‹</button>
+      <button class="carousel-btn next" aria-label="Вперёд">›</button>
+      <div class="carousel-counter"><span class="cur">1</span> / {{ page.gallery.all|length }}</div>
+      <div class="carousel-dots">
+        {% for item in page.gallery.all %}<button class="dot{% if forloop.first %} active{% endif %}" data-i="{{ forloop.counter0 }}" aria-label="Фото {{ forloop.counter }}"></button>{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% for block in page.body %}{% include_block block %}{% endfor %}
+
+    <div class="art-cta">
+      <a href="/#join" class="link-arrow">Присоединиться к заплыву →</a>
+      <a href="{{ page.get_parent.url }}" class="link-arrow ghost">← Все новости</a>
+    </div>
+  </div>
+</article>
+
+{% if related %}
+<section class="ed alt related">
+  <div class="ed-num">＋</div>
+  <h2 class="ed-head">Ещё новости</h2>
+  <div class="n-list">
+    {% for n in related %}
+      {% include "news/includes/post_card.html" with post=n index=forloop.counter %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

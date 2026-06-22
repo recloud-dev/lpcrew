@@ -1,0 +1,28 @@
+{% load wagtailimages_tags %}
+<section class="sec wrap-wide" id="features">
+  <div class="center reveal" style="margin-bottom:50px">
+    <h2 class="headline">{{ self.headline }}</h2>
+  </div>
+  <div class="bento" data-stagger>
+    {% for tile in self.tiles %}
+      {% if tile.block_type == "text_tile" %}
+        <div class="tile {{ tile.value.color }} {{ tile.value.size }}">
+          {% if tile.value.tag %}<span class="tk">{{ tile.value.tag }}</span>{% endif %}
+          <h3>{{ tile.value.title }}</h3>
+          {% if tile.value.text %}<p>{{ tile.value.text }}</p>{% endif %}
+          {% if tile.value.link_label %}<a href="{{ tile.value.link_url }}" class="lk">{{ tile.value.link_label }}</a>{% endif %}
+        </div>
+      {% else %}
+        <div class="tile img {{ tile.value.size }}">
+          {% image tile.value.image fill-800x600 alt=tile.value.title %}
+          {% if tile.value.tag or tile.value.title %}
+          <div class="tcap">
+            {% if tile.value.tag %}<span class="tk" style="opacity:.85">{{ tile.value.tag }}</span>{% endif %}
+            {% if tile.value.title %}<h3>{{ tile.value.title }}</h3>{% endif %}
+          </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

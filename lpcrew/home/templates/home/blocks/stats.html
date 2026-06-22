@@ -1,0 +1,10 @@
+<section class="stats" id="stats">
+  <div class="stats-grid">
+    {% for s in self.stats %}
+    <div class="stat">
+      {% if s.target %}<span class="stat-num" data-target="{{ s.target }}"{% if s.decimals %} data-decimals="{{ s.decimals }}"{% endif %}>0</span>{% endif %}{% if s.suffix %}<span class="stat-suf">{{ s.suffix }}</span>{% endif %}
+      {% if s.label %}<p>{{ s.label }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>

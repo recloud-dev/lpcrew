@@ -1,0 +1,10 @@
+{% with nav=settings.core.NavSettings site=settings.core.SiteSettings %}
+<header class="hd">
+  <a href="/" class="brand">{{ site.brand_name }}</a>
+  <nav class="nav">
+    {% for item in nav.items %}<a href="{{ item.value.url }}">{{ item.value.label }}</a>{% endfor %}
+    {% if nav.cta_label %}<a href="{{ nav.cta_url }}">{{ nav.cta_label }}</a>{% endif %}
+  </nav>
+  {% if site.hd_loc %}<span class="hd-loc">{{ site.hd_loc }}</span>{% endif %}
+</header>
+{% endwith %}

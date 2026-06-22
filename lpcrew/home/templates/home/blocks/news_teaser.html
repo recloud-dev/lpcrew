@@ -1,0 +1,8 @@
+<section class="sec wrap" id="news">
+  <div class="center reveal"><p class="eyebrow">{{ self.eyebrow }}</p><h2 class="headline">{{ self.headline }}</h2></div>
+  <div class="news-grid" data-stagger>
+    {% for post in posts %}
+      {% include "news/includes/post_card.html" with post=post show_date=True show_lead=True %}
+    {% endfor %}
+  </div>
+</section>

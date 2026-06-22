@@ -1,0 +1,5 @@
+{% load wagtailimages_tags %}
+<figure style="margin:28px 0">
+  {% image self.image width-900 alt=self.caption %}
+  {% if self.caption %}<figcaption class="copy-gray" style="margin-top:8px;font-size:.9rem">{{ self.caption }}</figcaption>{% endif %}
+</figure>

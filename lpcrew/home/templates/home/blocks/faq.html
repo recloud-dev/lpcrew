@@ -1,0 +1,14 @@
+<section class="ed faq-sec" id="faq">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="ed-head">{{ self.headline }}</h2>{% endif %}
+  <div class="faq">
+    {% for it in self.items %}
+    {% if it.question or it.answer %}
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false"><span>{{ it.question }}</span><span class="ico" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-in">{{ it.answer }}</div></div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

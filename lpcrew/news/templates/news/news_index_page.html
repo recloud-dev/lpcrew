@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="ed page-head">
+  <div class="ed-num">{% if page.eyebrow %}{{ page.eyebrow }}{% else %}№{% endif %}</div>
+  <h1 class="ed-head">{{ page.intro|default:page.title }}</h1>
+  <p class="big">Соревнования, открытая вода, тренировки и поездки LP&nbsp;Crew.</p>
+</section>
+
+<section class="ed" style="padding-top:0">
+  <div class="n-list">
+    {% for post in posts %}
+      {% include "news/includes/post_card.html" with post=post index=forloop.counter show_date=True show_lead=True %}
+    {% endfor %}
+  </div>
+
+  {% if posts.paginator.num_pages > 1 %}
+  <div class="art-cta">
+    {% if posts.has_previous %}<a class="link-arrow ghost" href="?page={{ posts.previous_page_number }}">← Назад</a>{% endif %}
+    {% if posts.has_next %}<a class="link-arrow" href="?page={{ posts.next_page_number }}">Ещё →</a>{% endif %}
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ page.seo_title|default:page.title }}{% endblock %} — {{ settings.core.SiteSettings.brand_name }}</title>
+<meta name="description" content="{% block meta_description %}{{ page.search_description|default:settings.core.SiteSettings.meta_description }}{% endblock %}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ settings.core.SiteSettings.brand_name }}">
+<meta property="og:title" content="{% block og_title %}{{ page.seo_title|default:page.title }}{% endblock %}">
+<meta property="og:description" content="{% block og_description %}{{ page.search_description|default:settings.core.SiteSettings.meta_description }}{% endblock %}">
+{% block og_image %}{% endblock %}
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+{% include "core/includes/nav.html" %}
+
+<main{% block main_attrs %}{% endblock %}>
+{% block content %}{% endblock %}
+</main>
+
+{% include "core/includes/footer.html" %}
+
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/nav.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

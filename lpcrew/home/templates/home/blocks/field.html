@@ -1,0 +1,20 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<section class="field" id="field">
+  {% if self.num %}<div class="ed-num light">{{ self.num }}</div>{% endif %}
+  {% if self.headline or self.headline_em %}<h2 class="field-head">{{ self.headline }}{% if self.headline_em %} <em>{{ self.headline_em }}</em>{% endif %}</h2>{% endif %}
+  {% if self.lead %}<p class="field-lead">{{ self.lead }}</p>{% endif %}
+  <div class="strip">
+    {% for s in swims %}
+    <a class="swim" href="{% pageurl s %}">
+      <figure>
+        {% if s.cover %}{% image s.cover fill-440x586 class="tone" alt=s.title loading="lazy" %}{% endif %}
+        <figcaption>
+          {% if s.place %}<span class="sw-place">{{ s.place }}</span>{% endif %}
+          {% if s.title %}<span class="sw-title">{{ s.title }} <i>↗</i></span>{% endif %}
+          {% if s.distance %}<span class="sw-dist">{{ s.distance }}</span>{% endif %}
+        </figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+  </div>
+</section>

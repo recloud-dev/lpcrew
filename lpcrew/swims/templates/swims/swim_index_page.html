@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<section class="ed page-head">
+  <div class="ed-num">№</div>
+  <h1 class="ed-head">{{ page.title }}</h1>
+  {% if page.intro %}<p class="big">{{ page.intro }}</p>{% endif %}
+</section>
+
+<section class="field" style="padding-top:0">
+  <div class="strip">
+    {% for s in swims %}
+    <a class="swim" href="{% pageurl s %}">
+      <figure>
+        {% if s.cover %}{% image s.cover fill-440x586 class="tone" alt=s.title loading="lazy" %}{% endif %}
+        <figcaption>
+          {% if s.place %}<span class="sw-place">{{ s.place }}</span>{% endif %}
+          <span class="sw-title">{{ s.title }} <i>↗</i></span>
+          {% if s.distance %}<span class="sw-dist">{{ s.distance }}</span>{% endif %}
+        </figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

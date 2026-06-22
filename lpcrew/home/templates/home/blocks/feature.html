@@ -1,0 +1,14 @@
+{% load wagtailimages_tags %}
+<section class="feature {{ self.theme }}"{% if self.anchor %} id="{{ self.anchor }}"{% endif %}>
+  <div class="ft-head reveal">
+    {% if self.eyebrow %}<p class="eyebrow">{{ self.eyebrow }}</p>{% endif %}
+    <h2>{{ self.heading_line1 }}{% if self.heading_line2 %}<br>{{ self.heading_line2 }}{% endif %}</h2>
+    {% if self.subhead %}<p class="subhead">{{ self.subhead }}</p>{% endif %}
+    {% if self.copy %}<p class="copy-gray">{{ self.copy }}</p>{% endif %}
+  </div>
+  {% if self.image %}
+  <div class="feature-media reveal">
+    <div class="frame" data-scale>{% image self.image fill-1100x619 alt=self.heading_line1 %}</div>
+  </div>
+  {% endif %}
+</section>

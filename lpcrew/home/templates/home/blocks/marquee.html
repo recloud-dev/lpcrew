@@ -1,0 +1,5 @@
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {% for item in self.items %}<span>{% if item.phrase %}<b>{{ item.phrase }}</b>{% endif %}<i class="star">✦</i>{% if item.sign %}<em class="sign">{{ item.sign }}</em><i class="star">✦</i>{% endif %}</span>{% endfor %}
+  </div>
+</section>

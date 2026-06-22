@@ -1,0 +1,65 @@
+# Формат 2.4 — нужен docker-compose v1 для одновременной поддержки
+# depends_on/condition и mem_limit (ограничение RAM на хосте без swarm).
+version: "2.4"
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    # Лимит RAM: на сервере мало памяти и нет swap. Postgres ужимаем.
+    mem_limit: 256m
+    command: postgres -c shared_buffers=64MB -c max_connections=20
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lpcrew}
+      POSTGRES_USER: ${POSTGRES_USER:-lpcrew}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # БД наружу НЕ публикуем (на сервере уже заняты другие postgres-порты,
+    # и так безопаснее). Бэкап — через docker exec, см. DEPLOY.md.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lpcrew}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    # 1 воркер + потоки: мало RAM/нет swap. Если контейнер раздуется выше
+    # лимита — OOM убьёт ЕГО (рестартнётся), чужие сервисы не страдают.
+    mem_limit: 400m
+    command: gunicorn lpcrew.wsgi:application --bind 0.0.0.0:8000 --workers 1 --threads 4 --timeout 60
+    env_file: .env
+    environment:
+      DJANGO_SETTINGS_MODULE: lpcrew.settings.prod
+      DATABASE_URL: postgres://${POSTGRES_USER:-lpcrew}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-lpcrew}
+    volumes:
+      - media:/app/media
+      - staticfiles:/app/staticfiles
+    depends_on:
+      db:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    mem_limit: 64m
+    # Порт 80 на сервере занят другим сайтом (khmno_nginx). Демо — на 8080.
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - media:/app/media:ro
+      - staticfiles:/app/staticfiles:ro
+    depends_on:
+      - web
+
+volumes:
+  # Именованные volume — данные переживают down/up и пересборку образа.
+  # При запуске с `-p lpcrew` имена будут lpcrew_pgdata / lpcrew_media /
+  # lpcrew_staticfiles — стабильны и переносимы (домен/TLS/новый сервер).
+  # Удаляются ТОЛЬКО при `down -v`.
+  pgdata:
+  media:
+  staticfiles:

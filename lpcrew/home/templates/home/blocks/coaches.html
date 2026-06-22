@@ -1,0 +1,17 @@
+{% load wagtailimages_tags %}
+<section class="ed alt" id="coaches">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="ed-head">{{ self.headline }}</h2>{% endif %}
+  <div class="coach-grid">
+    {% for c in self.coaches %}
+    <figure class="coach">
+      {% if c.photo %}{% image c.photo fill-280x280 class="coach-av tone" alt=c.name %}{% endif %}
+      <figcaption>
+        {% if c.name %}<h3>{{ c.name }}</h3>{% endif %}
+        {% if c.role %}<span class="c-role">{{ c.role }}</span>{% endif %}
+        {% if c.text %}<p>{{ c.text }}</p>{% endif %}
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>

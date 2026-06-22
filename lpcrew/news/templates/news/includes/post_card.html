@@ -1,0 +1,11 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<a class="n-row" href="{% pageurl post %}">
+  <span class="n-i">{{ index|stringformat:"02d" }}</span>
+  {% if post.cover %}{% image post.cover fill-320x240 class="n-thumb" alt=post.title loading="lazy" %}{% endif %}
+  <div class="n-meta">
+    <span class="n-cat">{% if post.category %}{{ post.category }}{% if show_date %} · {% endif %}{% endif %}{% if show_date %}{{ post.date|date:"j E Y" }}{% endif %}</span>
+    <h2>{{ post.title }}</h2>
+    {% if show_lead and post.lead %}<p>{{ post.lead }}</p>{% endif %}
+  </div>
+  <span class="n-arrow">↗</span>
+</a>

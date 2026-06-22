@@ -1,0 +1,19 @@
+<section class="ed alt pricing" id="pricing">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="ed-head">{{ self.headline }}</h2>{% endif %}
+  {% if self.big %}<p class="big">{{ self.big }}</p>{% endif %}
+  <div class="price-grid">
+    {% for p in self.plans %}
+    <div class="price{% if p.popular %} pop{% endif %}">
+      {% if p.popular and p.tag %}<span class="p-tag">{{ p.tag }}</span>{% endif %}
+      {% if p.name %}<h3>{{ p.name }}</h3>{% endif %}
+      {% if p.desc %}<p class="pdesc">{{ p.desc }}</p>{% endif %}
+      {% if p.amount %}<div class="amt">{{ p.amount }}{% if p.currency %}&nbsp;<small>{{ p.currency }}</small>{% endif %}</div>{% endif %}
+      {% if p.per %}<div class="per">{{ p.per }}</div>{% endif %}
+      {% if p.features %}<ul>{% for f in p.features %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+      {% if p.link_label %}<a href="{{ p.link_url }}" class="link-arrow">{{ p.link_label }} →</a>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% if self.note %}<p class="price-note">{{ self.note }}</p>{% endif %}
+</section>

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lpcrew"
+version = "0.1.0"
+description = "LP Crew — сайт команды пловцов на Wagtail"
+authors = ["LP Crew"]
+license = "MIT"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "^5.1"
+wagtail = "^6.3"
+psycopg = {version = "^3.2", extras = ["binary"]}
+gunicorn = "^23.0"
+whitenoise = "^6.8"
+Pillow = "^11.0"
+dj-database-url = "^2.3"
+python-dotenv = "^1.0"
+django-ratelimit = "^4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

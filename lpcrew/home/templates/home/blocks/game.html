@@ -1,0 +1,51 @@
+{% load static wagtailcore_tags %}
+<section class="ed game" id="game" hidden>
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2>{{ self.headline }}</h2>{% endif %}
+  {% if self.lead %}<p class="big">{{ self.lead }}</p>{% endif %}
+
+  <div class="game-grid">
+    <div class="game-stage"
+         data-submit="{% url 'leads:submit' %}"
+         data-leaderboard="{% url 'leads:leaderboard' %}">
+      <canvas id="swimGame" width="900" height="520" role="img"
+              aria-label="Мини-игра: пловец уворачивается от препятствий"></canvas>
+
+      <div class="game-hud">
+        <span class="game-meters"><b id="gameMeters">0</b> м</span>
+      </div>
+
+      <div class="game-panel" id="gameStart">
+        <p>Веди пальцем или мышью вверх-вниз. Уворачивайся.</p>
+        <button type="button" id="gameStartBtn">Поплыли →</button>
+      </div>
+
+      <div class="game-panel game-over" id="gameOver" hidden>
+        <p class="game-result">Дистанция: <b id="gameFinal">0</b> м</p>
+        {% if self.cta %}<p class="game-cta">{{ self.cta }}</p>{% endif %}
+        <form class="form game-form" id="gameForm" action="{% url 'leads:submit' %}" method="post" novalidate>
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="ИМЯ" autocomplete="name" required>
+          <input type="tel" name="phone" placeholder="ТЕЛЕФОН" autocomplete="tel" required>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <input type="hidden" name="meters" id="gameMetersField" value="0">
+          <button type="submit">В таблицу лидеров →</button>
+          <p class="note" id="gameNote"></p>
+        </form>
+        <button type="button" class="game-replay" id="gameReplayBtn">Ещё заплыв ↺</button>
+      </div>
+    </div>
+
+    <aside class="game-board">
+      <h3>Таблица лидеров</h3>
+      <ol class="game-leaders" id="gameLeaders">
+        {% for name, meters in top %}
+        <li><span class="gl-name">{{ name }}</span><span class="gl-m">{{ meters }} м</span></li>
+        {% empty %}
+        <li class="gl-empty">Пока пусто — стань первым.</li>
+        {% endfor %}
+      </ol>
+    </aside>
+  </div>
+</section>
+<script src="{% static 'js/game.js' %}" defer></script>

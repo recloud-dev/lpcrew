@@ -1,0 +1,13 @@
+<section class="ed alt season" id="season">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="ed-head">{{ self.headline }}</h2>{% endif %}
+  <div class="season-grid">
+    {% for c in self.cards %}
+    <article class="season-card">
+      {% if c.tag %}<span class="s-tag">{{ c.tag }}</span>{% endif %}
+      {% if c.title %}<h3>{{ c.title }}</h3>{% endif %}
+      {% if c.text %}<p>{{ c.text }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

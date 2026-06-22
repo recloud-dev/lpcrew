@@ -1,0 +1,9 @@
+<section class="ed" id="disciplines">
+  {% if self.num %}<div class="ed-num">{{ self.num }}</div>{% endif %}
+  {% if self.headline %}<h2 class="ed-head">{{ self.headline }}</h2>{% endif %}
+  <ol class="disc">
+    {% for it in self.items %}
+    <li><span class="d-i">{{ forloop.counter|stringformat:"02d" }}</span><div>{% if it.title %}<h3>{{ it.title }}</h3>{% endif %}{% if it.text %}<p>{{ it.text }}</p>{% endif %}</div></li>
+    {% endfor %}
+  </ol>
+</section>
