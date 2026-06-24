@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="LP Crew mark">
+  <defs>
+    <linearGradient id="tidal-wave" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#5ab4c0"/>
+      <stop offset="55%" stop-color="#8fd6e0"/>
+      <stop offset="100%" stop-color="#c8f0f5"/>
+    </linearGradient>
+  </defs>
+  <path fill="#f4f1ea" d="M10 6h12v72H10V6zm0 68h44v10H10V74z"/>
+  <path fill="#f4f1ea" d="M22 6h12v34c0 14 11 22 24 22h4v10H46C30 66 22 54 22 38V6z"/>
+  <path fill="url(#tidal-wave)" d="M52 14c14-2 26 6 30 20 2 4 2 9 0 13-4 14-18 24-34 20-3-1-6-2-8-4 6-3 10-7 13-13 4-9 4-20-1-28 2-3 0-7-4-8 7 6 12 16 11 26-1 12-9 24-22 30-6 3-13 4-20 3 4-4 7-10 7-18 0-7-3-13-7-18 6 1 12 0 16-3z"/>
+</svg>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Crew — экран загрузки · Tidal</title>
+  <meta name="description" content="LP Crew — интерфейс загрузки (первый экран при заходе на сайт). Прототип Tidal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Showcase-обёртка: loader живёт постоянно, не закрывается */
+    body{margin:0;background:#070708}
+    .loader-showcase .dive-intro{position:fixed}
+    /* Подпись-плашка, что это демонстрация экрана загрузки */
+    .ls-note{position:fixed;top:18px;left:0;right:0;z-index:300;text-align:center;
+      font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;
+      text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .ls-replay{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;
+      font-family:'Space Mono',monospace;font-size:.7rem;color:var(--mut);letter-spacing:.15em;
+      text-transform:uppercase;background:none;border:0;cursor:pointer}
+    .ls-replay:hover{color:#fff}
+  </style>
+</head>
+<body class="loader-showcase">
+
+  <div class="ls-note">Экран загрузки · первый кадр при заходе на сайт</div>
+
+  <!-- Dive intro / loader — точная копия первого экрана, без автозакрытия -->
+  <div class="dive-intro" id="diveIntro">
+    <div class="bubbles" aria-hidden="true"><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span></div>
+    <div class="di-inner">
+      <div class="di-mark"><img src="img/logos/logo-tidal-header-photo.png" alt="LP Crew"></div>
+      <div class="di-sub">Погружение · Tidal</div>
+    </div>
+  </div>
+
+  <button class="ls-replay" id="lsReplay" type="button">↻ Проиграть заново</button>
+
+  <script>
+    // Перезапуск входной анимации wordmark (caustics крутятся бесконечно сами)
+    document.getElementById('lsReplay').addEventListener('click', () => {
+      const inner = document.querySelector('.di-inner');
+      inner.replaceWith(inner.cloneNode(true));
+    });
+  </script>
+</body>
+</html>
